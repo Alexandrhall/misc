@@ -1,0 +1,18 @@
+# Alacritty Configuration File
+
+[window]
+dimensions = { columns = 120, lines = 30 }
+title = "Alacritty"
+padding = { x = 10, y = 10 }
+opacity = 0.9
+blur = true
+
+[font]
+normal = { family = "Agave Nerd Font Mono", style = "regular" }
+size = 14.0 # Justera storleken här
+
+[colors]
+#primary = { background = "#0e111c", foreground = "#fcfcff" }
+primary = { background = "#000000", foreground = "#fcfcff" }
+cursor = { text = "0x1e1e1e", cursor = "0xc5c8c6" }
+selection = { background = "0x5e5e5e", foreground = "0xc5c8c6" }
