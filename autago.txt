@@ -1,0 +1,18 @@
+ZSH:
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+.ZSHRC
+plugins=(git zsh-autosuggestions zsh-completions)
+
+PS:
+Install-Module PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
+
+$PROFILE
+Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -Colors @{ InLinePrediction = "$([ConsoleColor]::DarkGray)" }
+Set-PSReadLineKeyHandler -Chord 'Ctrl+f' -Function AcceptSuggestion
